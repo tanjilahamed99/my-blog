@@ -29,9 +29,7 @@ const DisplayBlogData = ({ blog }) => {
     );
 };
 
-DisplayBlogData.propTypes = {
-    blog: PropTypes.object
-};
+
 
 export default DisplayBlogData;
 

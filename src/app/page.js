@@ -9,6 +9,7 @@ const Home = async () => {
 
   return (
     <div className="container mx-auto">
+      
       <Navbar />
       <Banner />
       <div className="my-20">
