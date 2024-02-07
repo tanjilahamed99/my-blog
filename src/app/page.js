@@ -12,6 +12,7 @@ const Home = async () => {
       
       <Navbar />
       <Banner />
+      <button className="ga-test">Hello Every One</button>
       <div className="my-20">
         <h2 className="text-3xl font-bold text-center">Popular blogs</h2>
         <div className="grid items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-5">

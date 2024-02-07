@@ -14,7 +14,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
 
       <head>
-        {/* <Script
+
+        <Script
           id="adsbygoogle-init"
           strategy="afterInteractive"
           crossOrigin="anonymous"
@@ -24,11 +25,11 @@ export default function RootLayout({ children }) {
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=G-0NT3DV49TB`}
-        /> */}
+        />
 
 
 
-        <Script
+        <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=GTM-KNJN8X37`}
         />
