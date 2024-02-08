@@ -2,7 +2,6 @@ import Banner from "@/components/Shared/Banner";
 import UseAllBlog from "@/components/Hooks/UseAllBlog";
 import Navbar from "@/components/Shared/Navbar";
 import DisplayBlogData from "@/components/DisplayBlogData/DisplayBlogData";
-import { gtm } from "@/components/GTM/gtm";
 import Test from "@/components/GTM/test";
 
 const Home = async () => {
@@ -11,7 +10,7 @@ const Home = async () => {
 
   return (
     <div className="container mx-auto">
-      {/* <Test /> */}
+      <Test />
       <Navbar />
       <Banner />
       <button className="ga-test">Hello Every One</button>

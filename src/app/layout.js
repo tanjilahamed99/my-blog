@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
-import Test from "@/components/GTM/test";
+// import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -85,7 +84,6 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 
       </head>
       <body className={inter.className}>
-        <Test />
         {children}
       </body>
     </html>
