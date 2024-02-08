@@ -9,12 +9,19 @@ export const metadata = {
   description: "testing purpose",
 };
 
+
+
 export default function RootLayout({ children }) {
+
+
+
+
   return (
     <html lang="en">
 
       <head>
 
+        {/* google adSeance */}
         <Script
           id="adsbygoogle-init"
           strategy="afterInteractive"
@@ -24,7 +31,7 @@ export default function RootLayout({ children }) {
 
 
 
-
+        {/* google Analytics */}
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=G-0NT3DV49TB`}
@@ -48,7 +55,7 @@ export default function RootLayout({ children }) {
 
         {/* google tag manager */}
 
-        {/* <script
+        <script
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
@@ -59,17 +66,18 @@ export default function RootLayout({ children }) {
             });
           `,
           }}
-        /> */}
+        />
 
-        {/* <script
+        <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=GTM-KNJN8X37`}
-        /> */}
+        />
 
 
       </head>
-
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+      </body>
     </html>
   );
 }

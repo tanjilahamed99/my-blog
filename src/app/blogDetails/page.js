@@ -14,7 +14,6 @@ const page = async ({ searchParams }) => {
             <div className='grid grid-cols-7 gap-10 justify-center my-10'>
                 <div className='col-span-2  flex items-center text-center   justify-center'>
                     <Ads />
-
                 </div>
                 <div className='col-span-3'>
                     <Image className='w-full' height={500} width={500} src={data?.image} alt='blog image'></Image>
@@ -37,9 +36,7 @@ const page = async ({ searchParams }) => {
                     </div>
                 </div>
                 <div className='col-span-2  flex items-center text-center   justify-center'>
-
                     <Ads />
-
                 </div>
             </div>
         </div>
