@@ -15,7 +15,7 @@ const Ads = () => {
     return (
         <div>
             <ins class="adsbygoogle"
-                style="display:block"
+                style={{ display: 'block' }}
                 data-ad-client="ca-pub-9673111961225622"
                 data-ad-slot="4487841046"
                 data-ad-format="auto"
