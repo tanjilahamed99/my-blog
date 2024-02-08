@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import Test from "@/components/GTM/test";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
 
 
         {/* google Analytics */}
-        {/* <script
+        <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=G-0NT3DV49TB`}
         />
@@ -46,7 +47,7 @@ export default function RootLayout({ children }) {
             });
           `,
           }}
-        /> */}
+        />
 
 
 
@@ -84,6 +85,7 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 
       </head>
       <body className={inter.className}>
+        <Test />
         {children}
       </body>
     </html>
