@@ -1,6 +1,14 @@
 "use client"
 
+import { useEffect } from "react";
+import { gtm } from "../GTM/gtm";
+
 const Ads = () => {
+
+    useEffect(() => {
+        gtm('GTM-KNJN8X37')
+    }, [])
+
     return (
         <div className="bg-red-500">
 

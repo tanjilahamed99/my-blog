@@ -13,26 +13,23 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
-
-
-
   return (
     <html lang="en">
 
       <head>
 
         {/* google adSeance */}
-        <Script
+        {/* <Script
           id="adsbygoogle-init"
           strategy="afterInteractive"
           crossOrigin="anonymous"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9673111961225622"
-        />
+        /> */}
 
 
 
         {/* google Analytics */}
-        <script
+        {/* <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=G-0NT3DV49TB`}
         />
@@ -49,13 +46,13 @@ export default function RootLayout({ children }) {
             });
           `,
           }}
-        />
+        /> */}
 
 
 
         {/* google tag manager */}
 
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
@@ -71,7 +68,18 @@ export default function RootLayout({ children }) {
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=GTM-KNJN8X37`}
-        />
+        /> */}
+
+
+        {/* <!-- Google Tag Manager --> */}
+        {/* <script>(function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KNJN8X37');</script>
+        {/* <!-- End Google Tag Manager --> */}
+
+
 
 
       </head>
