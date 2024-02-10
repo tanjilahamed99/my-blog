@@ -2,7 +2,7 @@ import Banner from "@/components/Shared/Banner";
 import UseAllBlog from "@/components/Hooks/UseAllBlog";
 import Navbar from "@/components/Shared/Navbar";
 import DisplayBlogData from "@/components/DisplayBlogData/DisplayBlogData";
-import Test from "@/components/GTM/test";
+import Test from "@/components/GTM/Test";
 
 const Home = async () => {
 
