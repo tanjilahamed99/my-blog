@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
 
 
         {/* google Analytics */}
-        <script
+        {/* <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=G-0NT3DV49TB`}
         />
@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
             });
           `,
           }}
-        />
+        /> */}
 
 
 
