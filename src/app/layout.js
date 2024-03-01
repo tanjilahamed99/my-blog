@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-// import Script from "next/script";
+import Script from "next/script";
+import Providers from "@/redux/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,31 +10,23 @@ export const metadata = {
   description: "testing purpose",
 };
 
-
-
 export default function RootLayout({ children }) {
-
   return (
     <html lang="en">
-
       <head>
-
         {/* google adSeance */}
-        {/* <Script
+        <Script
           id="adsbygoogle-init"
           strategy="afterInteractive"
           crossOrigin="anonymous"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9673111961225622"
-        /> */}
-
-
+        />
 
         {/* google Analytics */}
-        {/* <script
+        <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=G-0NT3DV49TB`}
         />
-
 
         <script
           dangerouslySetInnerHTML={{
@@ -46,9 +39,7 @@ export default function RootLayout({ children }) {
             });
           `,
           }}
-        /> */}
-
-
+        />
 
         {/* google tag manager */}
 
@@ -70,7 +61,6 @@ export default function RootLayout({ children }) {
           src={`https://www.googletagmanager.com/gtag/js?id=GTM-KNJN8X37`}
         /> */}
 
-
         {/* <!-- Google Tag Manager --> */}
         {/* <script>(function(w,d,s,l,i){w[l] = w[l] || [];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -78,13 +68,11 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KNJN8X37');</script>
         {/* <!-- End Google Tag Manager --> */}
-
-
-
-
       </head>
       <body className={inter.className}>
+        <Providers>
         {children}
+        </Providers>
       </body>
     </html>
   );
