@@ -1,8 +1,10 @@
+
+
+import AllData, { GetServerSideProps } from '@/hooks/AllData';
 import Image from 'next/image';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
 
-const DisplayBlogData = ({ blog }) => {
+const DisplayBlogData =  ({ blog }) => {
 
     return (
         <Link href={

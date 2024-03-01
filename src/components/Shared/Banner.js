@@ -1,13 +1,4 @@
-"use client"
-
-import { useGetUsersQuery } from "@/redux/feature/Api/baseApi";
-
 const Banner = () => {
-    
-  const { data,isSuccess } = useGetUsersQuery();
-
-  console.log(isSuccess,data);
-
   return (
     <div
       className="hero min-h-screen bg-center bg-cover"
