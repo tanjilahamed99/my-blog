@@ -4,9 +4,9 @@ import { useGetUsersQuery } from "@/redux/feature/Api/baseApi";
 
 const Banner = () => {
     
-  const { data } = useGetUsersQuery();
+  const { data,isSuccess } = useGetUsersQuery();
 
-  console.log(data);
+  console.log(isSuccess,data);
 
   return (
     <div
