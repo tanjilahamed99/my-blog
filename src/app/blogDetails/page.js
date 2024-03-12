@@ -12,7 +12,7 @@ const page = async ({ searchParams }) => {
     return (
         <div>
             <Navbar />
-            {/* hello */}
+            {/* hello d*/}
             <div className='grid grid-cols-7 gap-10 justify-center my-10'>
                 <div className='col-span-2  flex items-center text-center   justify-center'>
                     <Ads />
