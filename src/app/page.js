@@ -3,6 +3,7 @@ import UseAllBlog from "@/components/Hooks/UseAllBlog";
 import Navbar from "@/components/Shared/Navbar";
 import DisplayBlogData from "@/components/DisplayBlogData/DisplayBlogData";
 import Test from "@/components/GTM/Test";
+import Map from "@/components/map/Map";
 
 const Home = async () => {
   const data = await UseAllBlog();
@@ -21,6 +22,7 @@ const Home = async () => {
           ))}
         </div>
       </div>
+      <Map />
     </div>
   );
 };
