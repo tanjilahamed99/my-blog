@@ -2,6 +2,8 @@
 
 import React, { useState, useRef } from "react";
 import "./image.css";
+import Uploady from "@rpldy/uploady";
+import UploadButton from "@rpldy/upload-button";
 
 const ImageCrop = () => {
   const [image, setImage] = useState(null);
@@ -9,7 +11,7 @@ const ImageCrop = () => {
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
-    const imgname = event.target.files[0].name;
+    const imgName = event.target.files[0].name;
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => {
@@ -28,7 +30,7 @@ const ImageCrop = () => {
         );
         canvas.toBlob(
           (blob) => {
-            const file = new File([blob], imgname, {
+            const file = new File([blob], imgName, {
               type: "image/png",
               lastModified: Date.now(),
             });
@@ -43,14 +45,15 @@ const ImageCrop = () => {
     };
   };
 
-  // const handleUploadButtonClick = (file) => {
-  //   var formData = new FormData();
-  //   formData.append("file", file);
-  // };
+  const handleUploadButtonClick = (file) => {
+    var formData = new FormData();
+    formData.append("file", file);
+  };
 
   const handleClick = (event) => {
     hiddenFileInput.current.click();
   };
+
   return (
     <div className="image-upload-container my-20">
       <div className="box-decoration">
@@ -65,11 +68,7 @@ const ImageCrop = () => {
               className="img-display-after"
             />
           ) : (
-            <img
-              src="./photo.png"
-              alt="upload image"
-              className="img-display-before"
-            />
+            <img src="" alt="upload image" className="img-display-before" />
           )}
 
           <input
@@ -87,6 +86,10 @@ const ImageCrop = () => {
         >
           Upload
         </button> */}
+
+        <Uploady  destination={{ url: "https://my-server.com/upload" }}>
+          <UploadButton />
+        </Uploady>
       </div>
     </div>
   );

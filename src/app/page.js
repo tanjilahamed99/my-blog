@@ -1,3 +1,5 @@
+"client site";
+
 import Banner from "@/components/Shared/Banner";
 import UseAllBlog from "@/components/Hooks/UseAllBlog";
 import Navbar from "@/components/Shared/Navbar";
@@ -5,6 +7,9 @@ import DisplayBlogData from "@/components/DisplayBlogData/DisplayBlogData";
 import Test from "@/components/GTM/Test";
 import Map from "@/components/map/Map";
 import ImageCrop from "@/components/imageCroper/Image";
+import Image2 from "@/components/image2/Image2";
+import Crop from "@/components/image2/Crop";
+import { FirstTutorial } from "@/pages/Images/Images";
 
 const Home = async () => {
   const data = await UseAllBlog();
@@ -23,8 +28,15 @@ const Home = async () => {
           ))}
         </div>
       </div>
-      <Map />
-      <ImageCrop />
+
+      <div className="my-20 border ">
+        <FirstTutorial />
+      </div>
+
+      {/* <Map /> */}
+      {/* <ImageCrop /> */}
+      <Crop />
+      {/* <Image2 /> */}
     </div>
   );
 };
