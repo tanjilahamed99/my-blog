@@ -1,59 +1,42 @@
 "use client"
 
-import React, { memo, useCallback, useRef, useState } from "react";
+
+import React, { useCallback, useRef, useState } from "react";
 import { BiSolidImageAdd } from "react-icons/bi";
-import styled, { css } from "styled-components";
-import Uploady, {
-  useItemProgressListener,
-  withRequestPreSendUpdate,
-} from "@rpldy/uploady";
+import { Line } from "rc-progress";
+import { Uploady, useItemProgressListener, withRequestPreSendUpdate } from "@rpldy/uploady";
 import UploadButton from "@rpldy/upload-button";
 import UploadPreview from "@rpldy/upload-preview";
-import { Line } from "rc-progress";
-import UploadCropper from "./UploadCroper";
+import UploadCropper from "./ChatGPTUploader";
+import Image from "next/image";
 
-const SingleCropContainer = styled.div`
-  width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+const SingleCropContainer = ({ children }) => (
+  <div className="w-600 flex flex-col items-center">{children}</div>
+);
 
-const PreviewImage = styled.img`
-  margin: 5px;
-  max-width: 600px;
-  max-height: 400px;
-  height: auto;
-`;
+const PreviewImage = ({ src }) => (
+  <Image width={500} height={500} className="h-[100px] w-fit" src={src} alt="cropped img to upload" />
+);
 
-const StyledProgressLine = styled(Line)`
-  width: 100%;
-  margin: 10px 0;
-`;
+const StyledProgressLine = ({ progress }) => (
+  <Line
+    strokeWidth={1}
+    percent={progress}
+    trailColor={"rgba(54,56,56)"}
+    strokeColor={"rgb(41,117,169)"}
+    className="w-full m-10"
+  />
+);
 
-const UploadProgress = ({ progress }) => {
+const UploadProgress = ({ progress }) => <StyledProgressLine progress={progress} />;
+
+const ItemUploadProgress = ({ id, show = false }) => {
+  const { completed: progress, state: itemState } = useItemProgressListener(id) || { completed: 0 };
+
   return (
-    <StyledProgressLine
-      strokeWidth={1}
-      percent={progress}
-      trailColor={"rgba(54,56,56)"}
-      strokeColor={"rgb(41,117,169)"}
-    />
+    (show || itemState === "uploading") && <UploadProgress progress={progress} />
   );
 };
-
-// eslint-disable-next-line react/display-name
-const ItemUploadProgress = memo(({ id, show = false }) => {
-  const { completed: progress, state: itemState } = useItemProgressListener(
-    id
-  ) || { completed: 0 };
-
-  return (
-    (show || itemState === "uploading") && (
-      <UploadProgress progress={progress} />
-    )
-  );
-});
 
 const ItemPreviewWithCrop = withRequestPreSendUpdate(
   ({ id, url, type, name, updateRequest, requestData }) => {
@@ -78,12 +61,12 @@ const ItemPreviewWithCrop = withRequestPreSendUpdate(
             setCropped={setCropped}
           />
         ) : (
-          <PreviewImage src={croppedImg} alt="cropped img to upload" />
+          <PreviewImage src={croppedImg} />
         )}
 
-        {isCropped && !croppedImg ? (
+        {isCropped && !croppedImg && (
           <button onClick={onUpload}>Upload selection</button>
-        ) : null}
+        )}
 
         {isCropped && <ItemUploadProgress id={id} />}
       </SingleCropContainer>
@@ -91,7 +74,7 @@ const ItemPreviewWithCrop = withRequestPreSendUpdate(
   }
 );
 
-export const FirstTutorial = () => {
+const ChatGPT = () => {
   return (
     <Uploady
       destination={{
@@ -100,9 +83,9 @@ export const FirstTutorial = () => {
       multiple={false}
     >
       <UploadButton>
-        <div class="flex flex-col items-center justify-center  border border-gray-300 rounded-lg w-full md:p-3 h-[120px] p-1">
+        <div className="flex flex-col items-center justify-center border border-gray-300 rounded-lg w-full md:p-3 h-[120px] p-1">
           <BiSolidImageAdd className="text-6xl" />
-          <span class="mt-1 text-[12px] md:text-sm text-center ">
+          <span className="mt-1 text-[12px] md:text-sm text-center">
             Upload multiple or drag and <br /> drop photos
           </span>
         </div>
@@ -111,3 +94,5 @@ export const FirstTutorial = () => {
     </Uploady>
   );
 };
+
+export default ChatGPT;

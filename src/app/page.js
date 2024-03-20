@@ -1,5 +1,3 @@
-"client site";
-
 import Banner from "@/components/Shared/Banner";
 import UseAllBlog from "@/components/Hooks/UseAllBlog";
 import Navbar from "@/components/Shared/Navbar";
@@ -10,6 +8,7 @@ import ImageCrop from "@/components/imageCroper/Image";
 import Image2 from "@/components/image2/Image2";
 import Crop from "@/components/image2/Crop";
 import { FirstTutorial } from "@/pages/Images/Images";
+import ChatGPT from "@/pages/Images/ChatGPT";
 
 const Home = async () => {
   const data = await UseAllBlog();
@@ -30,7 +29,13 @@ const Home = async () => {
       </div>
 
       <div className="my-20 border ">
+        <h2>Manual copy</h2>
         <FirstTutorial />
+      </div>
+
+      <div className="my-10 border">
+        <h2>ChatGPT</h2>
+        <ChatGPT/>
       </div>
 
       {/* <Map /> */}
