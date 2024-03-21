@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import Providers from "@/redux/Providers";
+import AuthProvider from "@/AuthProvider/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -71,7 +72,7 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       </head>
       <body className={inter.className}>
         <Providers>
-        {children}
+          <AuthProvider>{children}</AuthProvider>
         </Providers>
       </body>
     </html>
